@@ -1,0 +1,61 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+
+.modelCatalog {
+    margin: 56px 0;
+
+    @include on_tablet {
+        margin: 64px 0;
+    }
+
+    @include on_desktop {
+        margin: 80px 0;
+    }
+
+
+    &_label {
+        display: flex;
+        justify-content: space-between;
+        grid-column: 1 / -1;
+        align-items: center;
+        margin-bottom: 24px;
+
+        &_h3 {
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 140%;
+            letter-spacing: 0%;
+
+        }
+
+        &_buttons {
+            display: flex;
+            gap: 16px;
+            margin-left: 15px;
+
+            &_arrow {
+                height: 32px;
+                width: 32px;
+                padding: 8px;
+            }
+        }
+    }
+
+    &_carousel {
+        grid-column: 1 / -1;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        &_list {
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

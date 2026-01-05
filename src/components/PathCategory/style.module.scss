@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 24px 0px;
+
+    @include on_tablet {
+        margin-bottom: 40px;
+    }
+
+    &>a {
+        height: 16px;
+        width: 16px;
+    }
+
+    &>span {
+        color: $Secondary;
+        font-weight: 600;
+    }
+
+    &_label {
+        &>span {
+            margin-top: 8px;
+            color: $Secondary;
+            margin-bottom: 32px;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+$header-height: 48px;
+
+.mobileMenu {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    height: calc(100vh - $header-height);
+
+    background-color: $White;
+    z-index: 999;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease-out;
+
+
+    @include on_tablet {
+        display: none;
+    }
+
+    &_content {
+        flex-grow: 1;
+        padding: 0 16px;
+
+        &_links {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+
+            &>a {
+                display: flex;
+                align-items: center;
+                height: 27px;
+                font-family: Mont;
+                font-weight: 800;
+                font-size: 12px;
+                line-height: 11px;
+                color: $Secondary;
+
+                &.active {
+                    color: black;
+                    border-bottom: 2px solid $Primary;
+                }
+            }
+        }
+    }
+
+
+    &_icons {
+        display: flex;
+
+        :first-child {
+            border-right: 1px solid $Elements;
+        }
+
+        &_block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 64px;
+            border-top: 1px solid $Elements;
+
+            &>img {
+                height: 16px;
+                width: 16px;
+            }
+
+            &.active {
+                color: black;
+                border-bottom: 2px solid $Primary;
+            }
+        }
+    }
+}
+
+.is-open {
+    transform: translateX(0);
+}
