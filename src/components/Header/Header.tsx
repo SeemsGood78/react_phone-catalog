@@ -55,7 +55,7 @@ const Header = () => {
                             <Link to='/favorites'><img src={iconPaths.heart} alt="favorites" /></Link>
                         </div>
                         <div className={styles['header_iconBlock_icon']}>
-                            <img src={iconPaths.cart} alt="Cart" />
+                            <Link to='/cart'><img src={iconPaths.cart} alt="Cart" /></Link>
                         </div>
                         {!isMenuOpen && (
                             <div

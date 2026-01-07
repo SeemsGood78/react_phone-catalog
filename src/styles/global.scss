@@ -195,5 +195,21 @@ button {
 }
 
 .full_width {
-    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    & {
+        padding: 0 16px;
+    }
+
+    @include on_tablet {
+        padding: 0 24px;
+    }
+
+    @include on_desktop {
+        margin: 0 auto;
+    }
 }

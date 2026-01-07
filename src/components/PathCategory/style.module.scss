@@ -28,4 +28,21 @@
             margin-bottom: 32px;
         }
     }
+
+    &_back {
+        display: flex;
+        margin-top: 24px;
+        gap: 4px;
+        align-items: center;
+        margin-bottom: 24px;
+
+        @include on_tablet {
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        &>span{
+            color: $Secondary;
+        }
+    }
 }

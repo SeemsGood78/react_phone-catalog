@@ -4,7 +4,7 @@ import Pagination from '../Pagination/Pagination'
 
 const Phones = () => {
     return (
-        <div className="content_grid">
+        <div className="container">
             <CatalogueOptions />
             <CardCatalogue />
             <Pagination />

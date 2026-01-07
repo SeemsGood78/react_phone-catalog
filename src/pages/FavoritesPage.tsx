@@ -8,7 +8,7 @@ const FavoritesPage = () => {
     return (
         <div className="layout">
             <Header />
-            <div className="content_grid">
+            <div className="container">
                 <PathCategory />
                 <CardCatalogue />
             </div>

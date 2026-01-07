@@ -1,18 +1,19 @@
-import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
+import Footer from "../components/Footer/Footer"
 import PathCategory from "../components/PathCategory/PathCategory"
+import Cart from "../components/Cart/Cart"
 
-const TabletsPage = () => {
-     return (
+const CartPage = () => {
+    return (
         <div className="layout">
             <Header />
             <div className="container">
                 <PathCategory />
-                <div>TabletsPage</div>
+                <Cart />
             </div>
             <Footer />
         </div>
     )
 }
 
-export default TabletsPage
+export default CartPage

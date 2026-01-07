@@ -6,7 +6,7 @@ const AccessoriesPage = () => {
     return (
         <div className="layout">
             <Header />
-            <div className="content_grid">
+            <div className="container">
                 <PathCategory />
                 <div>AccessoriesPage</div>
             </div>

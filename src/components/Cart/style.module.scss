@@ -1,0 +1,124 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 32px;
+
+  @include on_desktop {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  &_cardList {
+    max-width: 752px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &_Card {
+    width: 100%;
+    display: flex;
+    padding: 16px;
+    border: 1px solid $Elements;
+    flex-direction: column;
+    gap: 16px;
+
+    &_info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+
+      .item:nth-child(3) {
+        flex: 1;
+      }
+
+      &_close {
+        width: 16px;
+        height: 16px;
+      }
+
+      &_image {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>img {
+          width: 66px;
+          height: 66px;
+        }
+      }
+    }
+
+    &_controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      &_buttons {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        &>button {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    @include on_tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+
+      .product-info {
+        width: auto;
+        flex: 1;
+      }
+
+      .product-controls {
+        width: auto;
+        gap: 24px;
+      }
+    }
+  }
+
+  &_checkout {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    @include on_desktop {
+      max-width: 368px;
+      gap: 24px;
+    }
+
+    &>hr {
+      border: none;
+      height: 1px;
+      background-color: $Elements;
+    }
+
+    &>button {
+      height: 48px;
+    }
+
+    &_price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

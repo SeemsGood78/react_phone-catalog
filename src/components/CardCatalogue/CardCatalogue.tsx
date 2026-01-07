@@ -7,6 +7,10 @@ const CardCatalogue = () => {
             <div className={styles['catalogue']}>
                 <Card extraClassName="catalogueCard" />
                 <Card extraClassName="catalogueCard" />
+                <Card extraClassName="catalogueCard" />
+                <Card extraClassName="catalogueCard" />
+                <Card extraClassName="catalogueCard" />
+                <Card extraClassName="catalogueCard" />
             </div>
         </>
     )
