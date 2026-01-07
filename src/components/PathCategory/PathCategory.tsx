@@ -19,7 +19,10 @@ const PathCategory = () => {
 
     const breadcrumbs = pathSegments.map((segment, index) => {
         const to = '/' + pathSegments.slice(0, index + 1).join('/');
-        const label = (segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '));
+
+        let label = decodeURIComponent(segment);
+
+        label = label.charAt(0).toUpperCase() + label.slice(1).replace(/-/g, ' ');
         return { to, label, rawSegment: segment.toLowerCase() };
     });
 
@@ -29,7 +32,7 @@ const PathCategory = () => {
         : '';
 
     const HomeIcon = (
-        <Link to="/" className={styles.homeLink}>
+        <Link to="/" className={styles['homeLink']}>
             <img
                 src='./../..//public/img/icons/Home.svg'
                 alt="Home"
@@ -53,7 +56,7 @@ const PathCategory = () => {
                         <React.Fragment key={breadcrumb.to}>
                             {Separator}
                             {index === breadcrumbs.length - 1 ? (
-                                <span className='text_small'>{breadcrumb.label}</span>
+                                <span className={`text_small ${styles['currentPath']}`}>{breadcrumb.label}</span>
                             ) : (
                                 <Link to={breadcrumb.to} className='text_small'>
                                     {breadcrumb.label}

@@ -6,14 +6,15 @@
     gap: 8px;
     align-items: center;
     margin: 24px 0px;
+    width: 100%;
+    overflow: hidden;
+
+    &>a {
+        flex-shrink: 0;
+    }
 
     @include on_tablet {
         margin-bottom: 40px;
-    }
-
-    &>a {
-        height: 16px;
-        width: 16px;
     }
 
     &>span {
@@ -34,15 +35,38 @@
         margin-top: 24px;
         gap: 4px;
         align-items: center;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
 
         @include on_tablet {
             margin-top: 40px;
             margin-bottom: 16px;
         }
 
-        &>span{
+        &>span {
             color: $Secondary;
         }
     }
+}
+
+.homeLink {
+    height: 16px;
+    width: 16px;
+
+    &>a {
+        height: 16px;
+        width: 16px;
+    }
+}
+
+.currentPath {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    /* Ключевое свойство для работы во flex-контейнере */
+    min-width: 0; 
+    
+    /* Заставляем элемент занять всё доступное место, 
+       но при этом позволяем ему сжиматься (shrink) */
+    flex: 0 1 auto; 
 }
