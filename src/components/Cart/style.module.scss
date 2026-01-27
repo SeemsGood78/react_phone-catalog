@@ -13,11 +13,14 @@
   }
 
   &_cardList {
-    max-width: 752px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     width: 100%;
+
+    @include on_desktop {
+      max-width: 752px;
+    }
   }
 
   &_Card {
@@ -63,6 +66,11 @@
       justify-content: space-between;
       width: 100%;
 
+      @include on-tablet {
+        gap: 24px;
+        justify-content: flex-end;
+      }
+
       &_buttons {
         display: flex;
         align-items: center;
@@ -94,7 +102,6 @@
   }
 
   &_checkout {
-    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;

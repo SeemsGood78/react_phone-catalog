@@ -1,12 +1,14 @@
 import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
-import Phones from "../components/Phones/Phones"
+import ProductList from "../components/ProductList/ProductList"
 
 const PhonesPage = () => {
     return (
         <div className="layout">
             <Header />
-             <Phones />
+            <div className="container">
+                <ProductList />
+            </div>
             <Footer />
         </div>
     )

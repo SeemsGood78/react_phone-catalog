@@ -21,6 +21,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all 0.3s ease;
+
+            &:hover:not(:disabled) {
+                border-color: $Primary; 
+            }
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
 
             &>img {
                 width: 16px;
@@ -38,17 +48,27 @@
             letter-spacing: 0%;
             text-align: center;
 
-            &>button {
+            & > button {
                 height: 32px;
                 width: 32px;
                 border: 1px solid $Elements;
+                cursor: pointer;
+                transition: all 0.3s ease; 
+
+                &:hover:not(.selected) {
+                    border-color: $Primary;
+                }
             }
         }
     }
 }
 
-.selected{
+.selected {
     background-color: $Primary;
     color: $White;
     border: none;
+    
+    &:hover {
+        background-color: $Primary; 
+    }
 }

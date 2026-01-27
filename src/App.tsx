@@ -21,6 +21,8 @@ export const App = () => (
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/phones/:id" element={<PhonePage />} />
+        <Route path="/tablets/:id" element={<PhonePage />} />
+        <Route path="/accessories/:id" element={<PhonePage />} />
       </Routes>
     </BrowserRouter>
   </div>

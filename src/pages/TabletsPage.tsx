@@ -1,14 +1,13 @@
 import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
-import PathCategory from "../components/PathCategory/PathCategory"
+import ProductList from "../components/ProductList/ProductList"
 
 const TabletsPage = () => {
      return (
         <div className="layout">
-            <Header />
+            <Header />  
             <div className="container">
-                <PathCategory />
-                <div>TabletsPage</div>
+                <ProductList/>
             </div>
             <Footer />
         </div>

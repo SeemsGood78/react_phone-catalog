@@ -1,21 +1,29 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './style.module.scss'
 import React from 'react';
 
+interface CatalogueOptionsProps {
+    totalProducts?: number;
+}
+
 const TITLE_LABELS: Record<string, string> = {
     'phones': 'Mobile phones',
+    'tablets': 'Tablets',
+    'accessories': 'Accessories',
 };
 
-const PathCategory = () => {
+const PathCategory = ({ totalProducts }: CatalogueOptionsProps) => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     const pathSegments = location.pathname.split('/').filter(segment => segment);
 
     const isCart = pathSegments[0] === 'cart';
-    const isProductPage = pathSegments.length >= 2;
-    const showModelsCount = pathSegments.length === 1 && !isCart;
-    const showBackButton = isCart || isProductPage;
-    const showBreadcrumbs = !isCart;
+    const isFavorites = pathSegments[0] === 'favorites';
+    const isProductPage = pathSegments.length >= 2 && !isCart && !isFavorites;
+    const showModelsCount = pathSegments.length === 1 && !isCart && !isFavorites && totalProducts !== undefined;
+    const showBackButton = isCart || isFavorites || isProductPage;
+    const showBreadcrumbs = !isCart && !isFavorites;
 
     const breadcrumbs = pathSegments.map((segment, index) => {
         const to = '/' + pathSegments.slice(0, index + 1).join('/');
@@ -30,6 +38,15 @@ const PathCategory = () => {
     const h1Title = lastSegment
         ? (TITLE_LABELS[lastSegment.rawSegment] || lastSegment.label)
         : '';
+
+    const handleBack = () => {
+        if (isProductPage) {
+            const categoryPath = `/${pathSegments[0]}`;
+            navigate(categoryPath);
+        } else {
+            navigate(-1);
+        }
+    };
 
     const HomeIcon = (
         <Link to="/" className={styles['homeLink']}>
@@ -68,10 +85,13 @@ const PathCategory = () => {
             )}
 
             {showBackButton && (
-                <div className={styles['icons_back']}>
+                <button 
+                    className={styles['icons_back']}
+                    onClick={handleBack}
+                >
                     <img src='/img/icons/Arrow_Left.svg' alt="Back" />
                     <span className='text_small'>Back</span>
-                </div>
+                </button>
             )}
 
             {h1Title && (
@@ -82,7 +102,7 @@ const PathCategory = () => {
                         <h1>{h1Title}</h1>
                     )}
                     {showModelsCount && (
-                        <span className="text_small">95 models</span>
+                        <span className="text_small">{totalProducts} models</span>
                     )}
                 </div>
             )}

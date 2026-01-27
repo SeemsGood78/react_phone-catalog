@@ -169,18 +169,6 @@ button {
 
 .content_grid {
     @include make-grid-container;
-
-    & {
-        padding: 0 16px;
-    }
-
-    @include on_tablet {
-        padding: 0 24px;
-    }
-
-    @include on_desktop {
-        padding: 0;
-    }
 }
 
 .gray {
@@ -200,11 +188,10 @@ button {
 
 .container {
     width: 100%;
-    max-width: 1200px;
-    max-width: 100%;
-    overflow: hidden; 
+    max-width: 1136px;
+    overflow: hidden;
     box-sizing: border-box;
-    
+
     & {
         padding: 0 16px;
     }
@@ -214,6 +201,24 @@ button {
     }
 
     @include on_desktop {
+        padding: 0;
         margin: 0 auto;
     }
+}
+
+a img,
+button img {
+    transition: transform 0.3s ease;
+}
+
+a:hover img,
+button:hover img {
+    transform: scale(1.1);
+}
+
+button,
+a,
+input,
+select {
+    transition: all 0.3s ease;
 }

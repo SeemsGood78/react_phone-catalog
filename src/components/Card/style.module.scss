@@ -54,20 +54,30 @@
     }
 
     &_price {
+        display: flex;
+        align-items: center; 
+        gap: 8px;
         height: 31px;
-        width: 51px;
 
         &>h3 {
-            font-weight: 800;
+            font-weight: 600;
             font-size: 22px;
             line-height: 140%;
+        }
+
+        &_full {
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 140%;
+            color: $Secondary;
+            text-decoration: line-through;
         }
     }
 
     &_separator {
-        width: 100%;
-        border-color: $Elements;
-        height: 0;
+        border: none;
+        border-top: 1px solid $Elements;
+        margin: 0;
     }
 
     &_chars {
@@ -99,7 +109,7 @@
 
         &_add {
             height: 40px;
-            padding: 9.5px;
+            align-items: center;
             flex-grow: 1;
 
             &:hover {
