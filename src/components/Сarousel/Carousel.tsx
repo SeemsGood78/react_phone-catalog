@@ -72,6 +72,7 @@ const Carousel = ({
 
                             return true;
                         })
+                        .sort(() => Math.random() - 0.5)
                         .slice(0, 12);
                 }
 

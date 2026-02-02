@@ -13,6 +13,7 @@
         display: flex;
         gap: 16px;
         justify-content: center;
+        align-items: center;
 
         &>button {
             height: 32px;
@@ -41,6 +42,7 @@
         &_numbers {
             display: flex;
             gap: 8px;
+            align-items: center;
 
             font-weight: 600;
             font-size: 14px;
@@ -71,4 +73,16 @@
     &:hover {
         background-color: $Primary; 
     }
+}
+
+.ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    color: $Secondary;
+    font-weight: 600;
+    font-size: 14px;
+    user-select: none;
 }

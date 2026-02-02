@@ -1,11 +1,10 @@
-@import '../../styles/mixin.scss';
-@import '../../styles/variables.scss';
+@import '../../styles/mixin';
+@import '../../styles/variables';
 
 .slider {
     &_main {
         margin-left: -16px;
         margin-right: -16px;
-        overflow: hidden;
 
         width: calc(100% + 32px);
         height: 0;
@@ -85,7 +84,7 @@
     &_right {
 
         @include on_tablet {
-            grid-column: 12 / span 1;
+         grid-column: 12 / span 1;
         }
 
         @include on_desktop {

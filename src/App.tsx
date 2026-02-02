@@ -7,7 +7,7 @@ import TabletsPage from './pages/TabletsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import FavoritesPage from './pages/FavoritesPage';
 import CartPage from './pages/CartPage';
-import PhonePage from './pages/PhonePage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 export const App = () => (
   <div className="App">
@@ -20,9 +20,9 @@ export const App = () => (
         <Route path="/tablets" element={<TabletsPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/phones/:id" element={<PhonePage />} />
-        <Route path="/tablets/:id" element={<PhonePage />} />
-        <Route path="/accessories/:id" element={<PhonePage />} />
+        <Route path="/phones/:id" element={<ProductDetailsPage />} />
+        <Route path="/tablets/:id" element={<ProductDetailsPage />} />
+        <Route path="/accessories/:id" element={<ProductDetailsPage />} />
       </Routes>
     </BrowserRouter>
   </div>

@@ -27,16 +27,11 @@
   }
 }
 
-// Desktop Constants
 $grid-columns: 24;
 $column-width: 32px;
 $gutter: 0 16px;
 $max-content-width: 1136px; 
-
-// Tablet Constants
 $tablet-columns: 12;
-
-// Mobile Constants
 $mobile-columns: 4;
 
 @mixin make-grid-container {
